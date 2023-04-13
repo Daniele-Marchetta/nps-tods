@@ -8,31 +8,38 @@ import {
   Code,
   Grid,
   theme,
+  Slider,
+  SliderFilledTrack,
+  SliderTrack,
+  SliderThumb,
+  Image,
+  SliderMark,
+  Button
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
+import { Icon, AddIcon, WarningIcon } from '@chakra-ui/icons'
+import TodsSlider from "./TodsSlider"
+import {  useState } from "react"
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
+
+export const App = () => {
+  const [value, setValue] = useState(0);
+
+
+
+  return (
+
+    <ChakraProvider theme={theme}>
+      <Grid minH="100vh" px={0}>
         <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
+        <text fontSize={"20px"}>Da quanto tempo é cliente Tods</text>
+        <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
+        <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
+        <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
+        <Button onClick={() => setValue(value<9?value+1:value)}>CIAO</Button>
+        <Button onClick={() => setValue(0)}>RESET</Button>
       </Grid>
-    </Box>
-  </ChakraProvider>
-)
+    </ChakraProvider>
+  )
+}

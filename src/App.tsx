@@ -21,6 +21,7 @@ import { Logo } from "./Logo"
 import { Icon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 import TodsSlider from "./TodsSlider"
 import {  useState } from "react"
+import Prova from "./Prova"
 
 
 export const App = () => {
@@ -33,10 +34,8 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <Grid minH="100vh" px={0}>
         <ColorModeSwitcher justifySelf="flex-end" />
-        <text fontSize={"20px"}>Da quanto tempo é cliente Tods</text>
         <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
-        <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
-        <TodsSlider totalSteps={10} currentStep={value}></TodsSlider>
+        <Prova></Prova>
         <Button onClick={() => setValue(value<9?value+1:value)}>CIAO</Button>
         <Button onClick={() => setValue(0)}>RESET</Button>
       </Grid>

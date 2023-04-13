@@ -11,7 +11,7 @@ function TodsSlider({ totalSteps, currentStep }: { totalSteps: number, currentSt
   console.log("ciao")
   const singleStep = 100 / (totalSteps - 1)
   return (
-    <Flex justifyContent={"center"} alignContent={"center"} h={"fit-content"}   overflow={"hidden"}  bgPosition={"center"} bgImage={`url(${todsBelt})`}>
+    <Flex justifyContent={"center"} alignContent={"center"} h={"fit-content"}  bgImage={`url(${todsBelt})`}   overflow={"hidden"}  bgPosition={"center"} >
       <Box w={"full"} maxW={["400px", "600px", "700px", "900px", "1200px", "1440"]} px={[5, 10, 15, 20, 20]}  >
         <Slider aria-label='slider-ex-4' step={singleStep} value={(currentStep) * singleStep}
         >

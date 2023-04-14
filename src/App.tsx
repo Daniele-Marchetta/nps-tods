@@ -22,11 +22,11 @@ import { Icon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 import TodsSlider from "./TodsSlider"
 import {  useState } from "react"
 import Prova from "./Prova"
+import Question from "./Question/Question"
 
 
 export const App = () => {
   const [value, setValue] = useState(0);
-
 
 
   return (
@@ -38,6 +38,7 @@ export const App = () => {
         <Prova></Prova>
         <Button onClick={() => setValue(value<9?value+1:value)}>CIAO</Button>
         <Button onClick={() => setValue(0)}>RESET</Button>
+        <Question></Question>
       </Grid>
     </ChakraProvider>
   )

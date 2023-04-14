@@ -5,10 +5,7 @@ import todsBelt from "./todsBelt.png"
 import { useEffect } from 'react';
 
 function TodsSlider({ totalSteps, currentStep }: { totalSteps: number, currentStep: number }) {
-  useEffect(() => {
-   console.log("renderizzato")
-  }, [])
-  console.log("ciao")
+
   const singleStep = 100 / (totalSteps - 1)
   return (
     <Flex justifyContent={"center"} alignContent={"center"} h={"fit-content"}  bgImage={`url(${todsBelt})`}   overflow={"hidden"}  bgPosition={"center"} >

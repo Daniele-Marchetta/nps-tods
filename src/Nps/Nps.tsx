@@ -30,7 +30,7 @@ const Nps = ({ questions, answers, increment, actual }: { questions: string[], a
     <form onSubmit={handleSubmit}>
         {questions.map((q, index) => {
           return (
-            <Box mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
+            <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
               <Flex justifyContent={["flex-start", "flex-start", "center"]} mb={12}>
           <Text textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
         </Flex>
@@ -39,7 +39,7 @@ const Nps = ({ questions, answers, increment, actual }: { questions: string[], a
             <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
               {answers[index].map((answer, index) => {
                 return (
-                  <Flex key={index} flexGrow={2} key={index} flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[1, 1, 5]}>
+                  <Flex key={index} flexGrow={2}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[1, 1, 5]}>
                     <Radio borderColor={"black"} _first={LabelStyles} value="9" variant={"none"} _checked={{ "borderColor": "black", "borderWidth": "5px" }} />
                     <Text fontSize={["18px", "18x", "25px"]} maxW={{ md: "150px" }} wordBreak={"break-word"} alignItems={"center"} height={{ md: "48px" }} textAlign={"center"} >
                       {answer}

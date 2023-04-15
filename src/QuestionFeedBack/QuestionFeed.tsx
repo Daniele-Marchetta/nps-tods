@@ -5,7 +5,7 @@ const QuestionFeed = () => {
     const handleChange= (e:any)=>{
         setValue(e.target.value)
     }
-    const [value, setValue] = useState("dsa"); 
+    const [value, setValue] = useState(""); 
     return (
         <>
             <Box mx={10}>

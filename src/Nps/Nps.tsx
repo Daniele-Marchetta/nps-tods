@@ -31,7 +31,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
           <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
             {answers[index].map((answer, index) => {
               return (
-                <Flex key={index} flexGrow={3}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[1, 1, 5]}>
+                <Flex key={index} flexGrow={3}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[2, 2, 5]}>
                   <Radio borderColor={"black"}  value={answer} _first={LabelStyles} _checked={{ "borderColor": "black", "borderWidth": "5px" }}  />
                   <Text fontSize={["18px", "18x", "18px","25px"]} maxW={{ md: "150px" }} wordBreak={"break-word"} alignItems={"center"} height={{ md: "48px" }} textAlign={"center"} >
                     {answer}

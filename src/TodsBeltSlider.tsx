@@ -5,11 +5,11 @@ const TodsBeltSlider = ({ totalSteps, currentStep }: { totalSteps: number, curre
 
     return (
         <Box bgImage="url('https://i.imgur.com/OTARJZv.png')" w={"full"} bgPosition={"center"} bgSize={{ base: "auto 550px", md: "auto 1300px" }}   >
-            <Center px={20} h={"full"}    >
+            <Center px={["5rem","5rem","7rem","10rem","15rem"]} h={"full"}    >
                 <Slider step={singleStep} value={(currentStep) * singleStep}  >
                     {Array.from({ length: totalSteps }).map((_, index) => {
                         return (
-                            <SliderMark value={(singleStep * index)} key={index} ml={{ sm: "-7px", md: "-10px" }} mt={{ base: "-7px", md: "-2.5" }} width={{ base: "10px", md: "15px" }} height={{ base: "12px", md: "17px" }}  >
+                            <SliderMark value={(singleStep * index)} key={index} ml={{ sm: "-6.5px", md: "-10px" }} mt={{ base: "-7px", md: "-2.5" }} width={{ base: "10px", md: "15px" }} height={{ base: "12px", md: "17px" }}  >
                                 <Image w={"full"} src={'/buco.png'}></Image>
                             </SliderMark>
                         )

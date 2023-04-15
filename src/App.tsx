@@ -79,7 +79,7 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <ColorModeSwitcher justifySelf="flex-end" />
       <Center>
-        <Image src={logoHeader} w={{ base: "125px", md: "269px" }} h={{ base: "35px", md: "76px" }} my={12}></Image>
+        <Image src={'/logoHeader.png'} w={{ base: "125px", md: "269px" }} h={{ base: "35px", md: "76px" }} my={12}></Image>
       </Center>
       <form onSubmit={handleSubmit}>
         {value < questions.length ?<TodsBeltSlider totalSteps={questions.length} currentStep={value} ></TodsBeltSlider> : null}

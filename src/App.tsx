@@ -1,30 +1,16 @@
-import * as React from "react"
 import {
   ChakraProvider,
   Box,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
-  Slider,
-  SliderFilledTrack,
-  SliderTrack,
-  SliderThumb,
   Image,
-  SliderMark,
   Button,
   Center,
   useToast
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
-import { Icon, AddIcon, WarningIcon } from '@chakra-ui/icons'
-import TodsSlider from "./TodsSlider"
 import { useState } from "react"
 import Nps from "./Nps/Nps"
-import logoHeader from "./logoHeader.png"
 import QuestionFeed from "./QuestionFeedBack/QuestionFeed"
 import TodsBeltSlider from "./TodsBeltSlider"
 

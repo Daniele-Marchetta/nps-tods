@@ -1,4 +1,4 @@
-import { Box, Slider, SliderMark, SliderThumb, SliderTrack, Image, Flex, Center } from '@chakra-ui/react';
+import { Box, Slider, SliderMark, SliderThumb, SliderTrack, Image, Center } from '@chakra-ui/react';
 
 const TodsBeltSlider = ({ totalSteps, currentStep }: { totalSteps: number, currentStep: number }) => {
     const singleStep = 100 / (totalSteps - 1)

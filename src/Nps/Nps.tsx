@@ -9,6 +9,7 @@ import {
   RadioGroup,
   Stack,
   Text,
+  Textarea,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -20,51 +21,47 @@ const LabelStyles = {
 
 const handleSubmit = (event:any)=>{
   event.preventDefault();
+  const formData = new FormData(event.target);
+  const updates = Object.fromEntries(formData);
+  console.log(updates)
 }
 
-const Nps = ({ questions, answers, increment, actual }: { questions: string[], answers: string[][], increment: any, actual: number }) => {
-  const [value, setValue] = useState("1");
-  console.log(actual, questions.length)
-  return (
+const Nps = ({ questions, answers, actual ,increment }: { questions: string[], answers: string[][], actual: number ,increment:any}) => {
+  return(
     <>
-    <form onSubmit={handleSubmit}>
-        {questions.map((q, index) => {
-          return (
-            <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
-              <Flex justifyContent={["flex-start", "flex-start", "center"]} mb={12}>
-          <Text textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
-        </Flex>
-        <FormControl isRequired px={{ md: 20 }} >
-          <RadioGroup onChange={setValue} value={value} size={"lg"} >
-            <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
-              {answers[index].map((answer, index) => {
-                return (
-                  <Flex key={index} flexGrow={2}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[1, 1, 5]}>
-                    <Radio borderColor={"black"} _first={LabelStyles} value="9" variant={"none"} _checked={{ "borderColor": "black", "borderWidth": "5px" }} />
-                    <Text fontSize={["18px", "18x", "25px"]} maxW={{ md: "150px" }} wordBreak={"break-word"} alignItems={"center"} height={{ md: "48px" }} textAlign={"center"} >
-                      {answer}
-                    </Text>
-                  </Flex>
-                )
-              })}
-            </Flex>
-          </RadioGroup>
-        </FormControl>
-      </Box>
-          )
-        })}
-      <Box mt={20}>
-        <Center>
-          <Button type={actual === questions.length - 1 ? "submit" : "button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"} onClick={() => increment((v:number)=>v<questions.length-1?v+1:v)}>{actual === questions.length - 1 ? "Invia" : "Avanti"}</Button>
-        </Center>
-        <Center visibility={actual === questions.length - 1 ? "visible" : "hidden"}>
-          <Text cursor={"pointer"} display={"block"} as='u'>Salta e Invia</Text>
-        </Center>
-      </Box>
-      </form>
-
+    {questions.map((q, index) => {
+        return (
+          <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
+            <Flex justifyContent={["flex-start", "flex-start", "center"]} my={"2.5rem"}>
+        <Text textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
+      </Flex>
+      <FormControl  px={{ md: 20 }}>
+        <RadioGroup  size={"lg"} borderColor={"black"}  variant={"none"}  name={q} id={q} w={"full"} >
+          <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
+            {answers[index].map((answer, index) => {
+              return (
+                <Flex key={index} flexGrow={3}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[1, 1, 5]}>
+                  <Radio value={answer} _first={LabelStyles} _checked={{ "borderColor": "black", "borderWidth": "5px" }}  />
+                  <Text fontSize={["18px", "18x", "18px","25px"]} maxW={{ md: "150px" }} wordBreak={"break-word"} alignItems={"center"} height={{ md: "48px" }} textAlign={"center"} >
+                    {answer}
+                  </Text>
+                </Flex>
+              )
+            })}
+          </Flex>
+        </RadioGroup>
+        <Box mt={20}>
+            <Center>
+              <Button onClick={()=>increment(actual+1)} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
+            </Center>
+          </Box>
+      </FormControl>
+    </Box>
+        )
+      })}
     </>
-  );
+    
+      )
 };
 
 export default Nps;

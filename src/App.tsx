@@ -22,7 +22,7 @@ export const App = () => {
     colorScheme:"blackAlpha"
   })
   const [value, setValue] = useState(0);
-  const [questions, setQuestions] = useState<string[]>(
+  const [questions] = useState<string[]>(
     [
       "Da quanto tempo é cliente Tods ?",
       "Come valuterebbe i seguenti servizi della nostra boutique online?",
@@ -34,7 +34,7 @@ export const App = () => {
     ]
   )
 
-  const [answers, setAnswers] = useState<string[][]>(
+  const [answers] = useState<string[][]>(
     [
       ["E' il mio primo acquisto", "1 anno", "1-2 anni", "3-5 anni", "Più di 6 anni"],
       ["Per niente soddisfatto", "2", "3", "4", "Pienamente soddisfatto"],

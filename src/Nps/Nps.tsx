@@ -8,7 +8,6 @@ import {
   RadioGroup,
   Text,
 } from "@chakra-ui/react";
-import { useState } from "react";
 
 
 const LabelStyles = {
@@ -16,12 +15,7 @@ const LabelStyles = {
   height: { sm: "20px", md: "42px" }
 };
 
-const handleSubmit = (event:any)=>{
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const updates = Object.fromEntries(formData);
-  console.log(updates)
-}
+
 
 const Nps = ({ questions, answers, actual ,increment }: { questions: string[], answers: string[][], actual: number ,increment:any}) => {
   return(

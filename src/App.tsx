@@ -37,7 +37,7 @@ export const App = () => {
   const [answers] = useState<string[][]>(
     [
       ["E' il mio primo acquisto", "1 anno", "1-2 anni", "3-5 anni", "Più di 6 anni"],
-      ["Per niente soddisfatto", "2", "3", "4", "Pienamente soddisfatto"],
+      ["1 - Per niente soddisfatto", "2", "3", "4", "5 - Pienamente soddisfatto"],
       ["1 - Per niente soddisfatto", "2", "3", "4", "5 - Pienamente soddisfatto"],
       ["1 - Per niente soddisfatto", "2", "3", "4", "5 - Pienamente soddisfatto"],
       ["1 - Per niente soddisfatto", "2", "3", "4", "5 - Pienamente soddisfatto", "Non ne ho usufruito"],
@@ -65,15 +65,15 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <ColorModeSwitcher justifySelf="flex-end" />
       <Center>
-        <Image src={'/logoHeader.png'} w={{ base: "125px", md: "269px" }} h={{ base: "35px", md: "76px" }} my={12}></Image>
+        <Image src={'/logoHeader.png'} w={{ base: "125px", md: "269px" }} h={{ base: "35px", md: "76px" }} my={{base:"2rem",md:12}}></Image>
       </Center>
       <form onSubmit={handleSubmit}>
         {value < questions.length ?<TodsBeltSlider totalSteps={questions.length} currentStep={value} ></TodsBeltSlider> : null}
         <Nps questions={questions} answers={answers} actual={value} increment={setValue} ></Nps>
         {value < questions.length ? null : <><QuestionFeed></QuestionFeed>
-          <Box mt={20}>
+          <Box mt={{base:"2.5rem",md:"8rem"}}>
             <Center>
-              <Button onClick={changeValue} type={"submit"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Invia"}</Button>
+              <Button size={"lg"} onClick={changeValue} type={"submit"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Invia"}</Button>
             </Center>
             <Center >
               <Text cursor={"pointer"} display={"block"} as='u'>Salta e Invia</Text>

@@ -9,7 +9,7 @@ const TodsBeltSlider = ({ totalSteps, currentStep }: { totalSteps: number, curre
                 <Slider step={singleStep} value={(currentStep) * singleStep}  >
                     {Array.from({ length: totalSteps }).map((_, index) => {
                         return (
-                            <SliderMark value={(singleStep * index)} key={index} ml={["-6px"]} mt={{ base: "-7px", md: "-2.5" }} width={{ base: "10px", md: "15px" }} height={{ base: "12px", md: "17px" }}  >
+                            <SliderMark value={(singleStep * index)} key={index} ml={["-0.39rem"]} mt={{ base: "-7px", md: "-2.5" }} width={{ base: "10px", md: "15px" }} height={{ base: "12px", md: "17px" }}  >
                                 <Image w={"full"} src={'/buco.png'}></Image>
                             </SliderMark>
                         )

@@ -23,8 +23,8 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
     {questions.map((q, index) => {
         return (
           <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
-            <Flex justifyContent={["flex-start", "flex-start", "center"]} my={"2.5rem"}>
-        <Text py={5} textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
+            <Flex justifyContent={["flex-start", "flex-start", "center"]} mt={{base:"1rem",md:"2rem",lg:"3rem"}} mb={{base:"1.5rem",md:"3rem",lg:"4.2rem"}}>
+        <Text  textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
       </Flex>
       <FormControl  px={{ md: 20 }}>
         <RadioGroup  variant={"none"}  name={q} id={q} w={"full"} >
@@ -41,9 +41,9 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
             })}
           </Flex>
         </RadioGroup>
-        <Box mt={20}>
+        <Box my={{base:"2.5rem",md:"10rem"}}>
             <Center>
-              <Button onClick={()=>increment(actual+1)} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
+              <Button size={"lg"} onClick={()=>increment(actual+1)} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
             </Center>
           </Box>
       </FormControl>

@@ -22,6 +22,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
   const [flag, setFlag] = useBoolean(true)
   const radioBorder =  useColorModeValue('black', 'white')
   const Buttonbg = useColorModeValue('white','WhiteAlpha.400')
+  const SeparatorBgColor = useColorModeValue("black","white")
   const handleClick = () =>{
     increment(actual+1)
     setFlag.on()
@@ -37,7 +38,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
             <Flex justifyContent={["flex-start", "flex-start", "center"]} mt={{base:"1rem",md:"2rem",lg:"3rem"}} mb={{md:"3rem",lg:"4.2rem"}} >
         <Text height={["2em"]} lineHeight={1.2}  textAlign={["left","left","center"]} as={"h1"} fontWeight={"bold"} fontSize={{ sm: "19px", md: "40px" }}>{q}</Text>
       </Flex>
-      <Box height={"1px"} my={{base:"1.5rem",md:"3rem",lg:"4.2rem"}} bgColor={"black"} display={{base:"inherit",md:"none"}}  w={"20%"}>
+      <Box height={"1px"} my={{base:"1.5rem",md:"3rem",lg:"4.2rem"}} bgColor={SeparatorBgColor} display={{base:"inherit",md:"none"}}  w={"20%"}>
       </Box>
             <FormControl  px={{ md: 20 }}>
         <RadioGroup onChange={handleChange}  variant={"none"}  name={q} id={q} w={"full"} height={["11em","11em",""]} overflowY={"auto"}>

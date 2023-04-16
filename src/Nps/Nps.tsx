@@ -29,12 +29,12 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
         return (
           <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
             <Flex justifyContent={["flex-start", "flex-start", "center"]} mt={{base:"1rem",md:"2rem",lg:"3rem"}} mb={{md:"3rem",lg:"4.2rem"}} >
-        <Text  textAlign={"left"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
+        <Text height={"2em"}  textAlign={"left"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
       </Flex>
       <Box height={"1px"} my={{base:"1.5rem",md:"3rem",lg:"4.2rem"}} bgColor={"black"} display={{base:"inherit",md:"none"}}  w={"20%"}>
       </Box>
             <FormControl  px={{ md: 20 }}>
-        <RadioGroup onChange={setFlag.off} variant={"none"}  name={q} id={q} w={"full"} >
+        <RadioGroup onChange={setFlag.off} variant={"none"}  name={q} id={q} w={"full"} height={["11em","11em",""]} overflowY={"auto"}>
           <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
             {answers[index].map((answer, index) => {
               return (
@@ -48,12 +48,12 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
             })}
           </Flex>
         </RadioGroup>
-        <Box my={{base:"2.5rem",md:"10rem"}}>
+        </FormControl>
+        <Box my={{base:"2.5rem",md:"1.9rem"}} >
             <Center>
-              <Button size={"lg"} isDisabled={flag} onClick={handleClick} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
+              <Button fontSize={{md:"2xl"}} size={"lg"} isDisabled={flag} onClick={handleClick} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
             </Center>
           </Box>
-      </FormControl>
     </Box>
         )
       })}

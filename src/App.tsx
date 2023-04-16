@@ -3,16 +3,16 @@ import {
   Box,
   Text,
   theme,
-  Image,
   Button,
   Center,
-  useToast
+  useToast,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { useState } from "react"
 import Nps from "./Nps/Nps"
 import QuestionFeed from "./QuestionFeedBack/QuestionFeed"
 import TodsBeltSlider from "./TodsBeltSlider"
+import Header from "./Header/Header"
 
 
 export const App = () => {
@@ -61,13 +61,10 @@ export const App = () => {
       setValue(value + 1)
     }
   }
-
   return (
     <ChakraProvider theme={theme}>
       <ColorModeSwitcher justifySelf="flex-end" />
-      <Center>
-        <Image src={'/logoHeader.png'} w={{ base: "125px", md: "269px" }} h={{ base: "35px", md: "76px" }} my={{base:"2rem",md:12}}></Image>
-      </Center>
+      <Header></Header>
       <form onSubmit={handleSubmit}>
         {value < questions.length ?<TodsBeltSlider totalSteps={questions.length} currentStep={value} ></TodsBeltSlider> : null}
         <Nps questions={questions} answers={answers} actual={value} increment={setValue} ></Nps>

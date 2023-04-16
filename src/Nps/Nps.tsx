@@ -8,6 +8,7 @@ import {
   RadioGroup,
   Text,
   useBoolean,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 
@@ -19,6 +20,8 @@ const LabelStyles = {
 
 const Nps = ({ questions, answers, actual ,increment }: { questions: string[], answers: string[][], actual: number ,increment:any}) => {
   const [flag, setFlag] = useBoolean(true)
+  const radioBorder =  useColorModeValue('black', 'white')
+  const Buttonbg = useColorModeValue('white','WhiteAlpha.400')
   const handleClick = () =>{
     increment(actual+1)
     setFlag.on()
@@ -39,7 +42,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
             {answers[index].map((answer, index) => {
               return (
                 <Flex key={index} flexGrow={3}  flexDir={["row", "row", "column", "column", "column", "column"]} justifyContent={"center"} alignItems={"center"} gap={[2, 2, 5]}>
-                  <Radio borderColor={"black"}  value={answer} _first={LabelStyles} _checked={{ "borderColor": "black", "borderWidth": "5px" }}  />
+                  <Radio borderColor={radioBorder}  value={answer} _first={LabelStyles} _checked={{ "borderColor": "black", "borderWidth": "5px" }}  />
                   <Text fontSize={["18px", "18x", "18px","25px"]} maxW={{ md: "150px" }} wordBreak={"break-word"} alignItems={"center"} height={{ md: "48px" }} textAlign={{base:"left",md:"center"}} >
                     {answer}
                   </Text>
@@ -51,7 +54,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
         </FormControl>
         <Box my={{base:"2.5rem",md:"1.9rem"}} >
             <Center>
-              <Button fontSize={{md:"2xl"}} size={"lg"} isDisabled={flag} onClick={handleClick} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
+              <Button bgColor={Buttonbg} fontSize={{md:"2xl"}} size={"lg"} isDisabled={flag} onClick={handleClick} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
             </Center>
           </Box>
     </Box>

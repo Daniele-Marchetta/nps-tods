@@ -28,10 +28,10 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
     {questions.map((q, index) => {
         return (
           <Box key={index} mx={10} display={questions[actual]===q?"-moz-initial":"none"}>
-            <Flex justifyContent={["flex-start", "flex-start", "center"]} mt={{base:"1rem",md:"2rem",lg:"3rem"}} >
+            <Flex justifyContent={["flex-start", "flex-start", "center"]} mt={{base:"1rem",md:"2rem",lg:"3rem"}} mb={{md:"3rem",lg:"4.2rem"}} >
         <Text  textAlign={"left"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
       </Flex>
-      <Box height={"1px"} my={{base:"1.5rem",md:"3rem",lg:"4.2rem"}}bgColor={"black"} visibility={{base:"visible",md:"hidden"}}  w={"20%"}>
+      <Box height={"1px"} my={{base:"1.5rem",md:"3rem",lg:"4.2rem"}} bgColor={"black"} display={{base:"inherit",md:"none"}}  w={"20%"}>
       </Box>
             <FormControl  px={{ md: 20 }}>
         <RadioGroup onChange={setFlag.off} variant={"none"}  name={q} id={q} w={"full"} >

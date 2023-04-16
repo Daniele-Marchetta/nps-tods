@@ -19,7 +19,10 @@ export const App = () => {
   const toast = useToast({
     position: 'top',
     title: 'Form inviato',
-    colorScheme:"blackAlpha"
+    isClosable: true,
+    duration: 2000,
+    status:"success"
+
   })
   const [value, setValue] = useState(0);
   const [questions] = useState<string[]>(
@@ -56,10 +59,8 @@ export const App = () => {
   const changeValue = () => {
     if (value < questions.length) {
       setValue(value + 1)
-      console.log("aumentato")
     }
   }
-  console.log(value, questions.length)
 
   return (
     <ChakraProvider theme={theme}>

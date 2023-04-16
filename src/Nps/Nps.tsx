@@ -7,6 +7,7 @@ import {
   Radio,
   RadioGroup,
   Text,
+  useBoolean,
 } from "@chakra-ui/react";
 
 
@@ -16,8 +17,12 @@ const LabelStyles = {
 };
 
 
-
 const Nps = ({ questions, answers, actual ,increment }: { questions: string[], answers: string[][], actual: number ,increment:any}) => {
+  const [flag, setFlag] = useBoolean(true)
+  const handleClick = () =>{
+    increment(actual+1)
+    setFlag.on()
+  }
   return(
     <>
     {questions.map((q, index) => {
@@ -27,7 +32,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
         <Text  textAlign={"center"} as={"h1"} fontWeight={"bold"} fontSize={{ base: "20", md: "40px" }}>{q}</Text>
       </Flex>
       <FormControl  px={{ md: 20 }}>
-        <RadioGroup  variant={"none"}  name={q} id={q} w={"full"} >
+        <RadioGroup onChange={setFlag.off} variant={"none"}  name={q} id={q} w={"full"} >
           <Flex direction={["column", "column", "row"]} alignItems={["flex-start", "flex-start", "center"]}  >
             {answers[index].map((answer, index) => {
               return (
@@ -43,7 +48,7 @@ const Nps = ({ questions, answers, actual ,increment }: { questions: string[], a
         </RadioGroup>
         <Box my={{base:"2.5rem",md:"10rem"}}>
             <Center>
-              <Button size={"lg"} onClick={()=>increment(actual+1)} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
+              <Button size={"lg"} isDisabled={flag} onClick={handleClick} type={"button"} mb={1} borderColor={"black"} px={9} py={5} variant={"outline"} rounded={"full"}  >{"Avanti"}</Button>
             </Center>
           </Box>
       </FormControl>

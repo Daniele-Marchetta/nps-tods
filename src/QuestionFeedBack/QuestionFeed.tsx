@@ -14,7 +14,7 @@ const QuestionFeed = () => {
                 </Flex>
                 <FormControl>
                     <Center>
-                        <Textarea w={"85%"} value={value} onChange={handleChange} name="feedback" placeholder="..." height={250} mt={{base:"1rem",md:"2.5rem"}}></Textarea>
+                        <Textarea focusBorderColor="black" w={"85%"} value={value} onChange={handleChange} name="feedback" placeholder="..." height={250} mt={{base:"1rem",md:"2.5rem"}}></Textarea>
                     </Center>
                 </FormControl>
             </Box>
